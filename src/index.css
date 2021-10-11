@@ -1,13 +1,102 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Sen", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.f-12 {
+  font-size: 12px;
+}
+.homepage {
+  background: #5252520f;
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar-toggler {
+  background-color: white !important;
+}
+.navbar-toggler:focus {
+  box-shadow: unset !important;
+}
+.bg-color {
+  background: #4296e97d !important;
+}
+
+.homePage {
+  background: whitesmoke;
+}
+
+.st-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  font-size: 12px;
+  border-radius: 5px;
+  border: 1px solid #e3e3e3;
+  padding: 20px 13px;
+  text-transform: capitalize;
+}
+.tariff-btn {
+  width: 100%;
+
+  padding: 9px 13px;
+  font-size: 12px;
+  border: 1px solid #e3e3e3;
+}
+.tariff-btn.active {
+  background: #0a66c2;
+  border: unset;
+  color: white;
+}
+.cargo {
+  border: 1px solid #e9e4e4;
+  background: #5252520f;
+  border-radius: 5px;
+}
+.cargo-btn {
+  width: 100%;
+
+  background: #5252520f;
+  padding: 9px 13px;
+  font-size: 12px;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+.cargo-btn.active {
+  color: #0a66c2;
+  font-weight: bold;
+  border: unset;
+  background: white;
+}
+.st-btn img {
+  height: 44px;
+  margin-right: -18px;
+  margin-bottom: -28px;
+}
+
+.st-btn.active {
+  background: #0a66c2;
+  border: unset;
+  color: white;
+}
+
+.segment-cont {
+  background: white;
+  padding: 20px;
+  box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+.bg-unset {
+  background-color: unset !important;
+}
+.form-g {
+  border-left: none !important;
+}
+.input-group {
+  flex-wrap: nowrap !important;
+}
+.form-floating-group input {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
 }
