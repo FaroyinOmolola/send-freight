@@ -273,7 +273,8 @@ function HomePage() {
                       type="switch"
                       id="custom-switch"
                       className="fs-14"
-                      checked
+                      defaultChecked={true}
+                      
                       label="Dangerous Cargo (ex. Chemicals, Battery)"
                     />
                   </Form.Group>
@@ -431,6 +432,4 @@ const FloatingLabel = (props) => {
   );
 };
 
-///////////////////////styles////////////////
 
-////////usage/////////////////
