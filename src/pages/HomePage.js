@@ -347,7 +347,7 @@ function HomePage() {
                   </Form.Group>
                 </Col>
               </Row>
-              <Row>
+              <Row className="mt-4">
                 <Col>
                   <Form.Group>
                     <Form.Check
