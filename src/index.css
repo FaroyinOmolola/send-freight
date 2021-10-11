@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: "Sen", sans-serif;
+  color: black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -57,23 +58,21 @@ body {
   color: white;
 }
 .cargo {
-  border: 1px solid #e9e4e4;
+  padding: 3px;
   background: #5252520f;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .cargo-btn {
   width: 100%;
-
-  background: #5252520f;
   padding: 9px 13px;
   font-size: 12px;
-  border: 1px solid white;
-  border-radius: 8px;
+  
 }
 .cargo-btn.active {
   color: #0a66c2;
   font-weight: bold;
   border: unset;
+  border-radius: 8px;
   background: white;
 }
 .st-btn img {
@@ -101,7 +100,46 @@ body {
 .input-group {
   flex-wrap: nowrap !important;
 }
+
 .form-floating-group input {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
+}
+.floating-label {
+  font-size: 13px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #e8e8e8;
+  padding: 10px;
+}
+.input-wrapper {
+  display: flex;
+  width: 100%;
+}
+.input-wrapper > div {
+  width: 20%;
+  min-width: fit-content;
+}
+.input-wrapper.left > div {
+  margin-right: 7px;
+}
+.input-wrapper.right > div {
+  margin-left: 7px;
+  text-align: right;
+}
+.floating-label input {
+  border: unset;
+  width: calc(80% - 7px);
+  outline: 1px solid #ffffffff;
+}
+.floating-label legend {
+    float: unset; 
+     width: unset; 
+   padding: 0px 4px;
+     margin-bottom: unset; 
+     font-size: inherit
+}
+.fs-14{
+  font-size: 14px !important;
+  font-weight: 600;
 }

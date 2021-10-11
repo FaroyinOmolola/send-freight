@@ -213,7 +213,7 @@ function HomePage() {
                       })
                     }
                   >
-                    <option value="">Incoterms</option>
+                    <option value="" readOnly>Incoterms</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -272,6 +272,8 @@ function HomePage() {
                     <Form.Check
                       type="switch"
                       id="custom-switch"
+                      className="fs-14"
+                      checked
                       label="Dangerous Cargo (ex. Chemicals, Battery)"
                     />
                   </Form.Group>
@@ -279,50 +281,27 @@ function HomePage() {
               </Row>
               <Row className="w-75">
                 <Col>
-                  <div className="input-group mb-3">
-                    <div className="form-floating form-floating-group flex-grow-1">
-                      <input
-                        type="text"
-                        className="form-control"
-                        name="totalVolume"
-                        id="totalVolume"
-                        style={{
-                          borderRight: "none",
-                        }}
-                        onChange={(e) =>
-                          setValue((prev) => {
-                            return {
-                              ...prev,
-                              totalVolume: e.target.value,
-                            };
-                          })
-                        }
-                      />
-                      <label htmlFor="totalVolume">Total Volume</label>
-                    </div>
-                    <span
-                      className="input-group-text"
-                      style={{
-                        background: "none",
-                        borderLeft: "none",
-                      }}
-                    >
-                      cm
-                    </span>
-                  </div>
-                </Col>
-                <Col>
-                  <div className="input-group mb-3">
-                    <div className="form-floating form-floating-group flex-grow-1">
-                      <input
-                        type="text"
-                        className="form-control"
-                        name="totalWeight"
-                        style={{
-                          borderRight: "none",
-                        }}
-                        id="totalWeight"
-                        onChange={(e) =>
+                   <FloatingLabel
+                      unit="cm"
+                      label="Total Volume"
+                      value={value.totalVolume}
+                      valueSetter={(e) =>
+                        setValue((prev) => {
+                          return {
+                            ...prev,
+                            totalVolume: e.target.value,
+                          };
+                        })
+                      }
+                      position="right"
+                    />
+                  </Col>
+                  <Col>
+                    <FloatingLabel
+                      unit="kg"
+                      label="Total Weight"
+                      value={value.totalWeight}
+                      valueSetter={(e) =>
                           setValue((prev) => {
                             return {
                               ...prev,
@@ -330,20 +309,10 @@ function HomePage() {
                             };
                           })
                         }
-                      />
-                      <label htmlFor="totalWeight">Total Volume</label>
-                    </div>
-                    <span
-                      className="input-group-text"
-                      style={{
-                        background: "none",
-                        borderLeft: "none",
-                      }}
-                    >
-                      kg
-                    </span>
-                  </div>
+                      position="right"
+                    />
                 </Col>
+                
               </Row>
             </Container>
 
@@ -355,6 +324,7 @@ function HomePage() {
                     <Form.Check
                       type="switch"
                       id="exportForwarding"
+                      className="fs-14"
                       label="Export Forwarding"
                     />
                     <Form.Text>
@@ -366,6 +336,7 @@ function HomePage() {
                   <Form.Group>
                     <Form.Check
                       type="switch"
+                      className="fs-14"
                       id="importClearance"
                       label="Import Custom Clearance"
                     />
@@ -381,6 +352,7 @@ function HomePage() {
                     <Form.Check
                       type="switch"
                       id="cargoInsurance"
+                      className="fs-14"
                       label="Cargo Insurance"
                     />
                     <Form.Text>
@@ -394,6 +366,7 @@ function HomePage() {
                     <Form.Check
                       type="switch"
                       id="delivery"
+                      className="fs-14"
                       label="Transport / Delivery"
                     />
                     <Form.Text>
@@ -402,6 +375,7 @@ function HomePage() {
                   </Form.Group>
                 </Col>
               </Row>
+              
             </Container>
           </Form>
         </Col>
@@ -428,36 +402,35 @@ const TopButton = (props) => {
   );
 };
 
-// const FieldSetComponent = ({
-//   value,
-//   onChange,
-//   placeholder,
-//   sideText,
-//   ...prop
-// }) => {
-//   return (
-//     <div style={{ width: "100%" }}>
-//       <fieldset style={{ display: "flex", width: "100%" }}>
-//         {value && <legend>{placeholder}</legend>}
-//         {prop.position === "left" && (
-//           <div style={{ minWidth: "fit-content", width: "20%" }}>
-//             {sideText}
-//           </div>
-//         )}
+const FloatingLabel = (props) => {
+  return (
+    <fieldset className="floating-label">
+      <legend>{props.label}</legend>
+      <div
+        className={`input-wrapper ${props.position}`}
+      >
+      
+          {props.position === "left" && (
+            <div>
+              <span>{props.unit}</span>
+            </div>
+          )}
+        <input
+          value={props.value}
+          onChange={props.valueSetter}
+        />
+        
+          {props.position === "right" && (
+            <div>
+              <span>{props.unit}</span>
+            </div>
+          )}
+        
+      </div>
+    </fieldset>
+  );
+};
 
-//         <input
-//           style={{ width: "80%" }}
-//           placeholder={placeholder}
-//           value={value}
-//           onChange={onChange}
-//         ></input>
+///////////////////////styles////////////////
 
-//         {prop.position === "right" && (
-//           <div style={{ minWidth: "fit-content", width: "20%" }}>
-//             {sideText}
-//           </div>
-//         )}
-//       </fieldset>
-//     </div>
-//   );
-// };
+////////usage/////////////////
