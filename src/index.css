@@ -24,7 +24,14 @@ body {
 .homePage {
   background: whitesmoke;
 }
+.bg-fill {
+  background: #5252520f !important;
+}
 
+.bg-unset {
+  background: #5252520f !important;
+  border-right: none !important;
+}
 .st-btn {
   width: 100%;
   display: flex;
@@ -87,9 +94,7 @@ body {
   box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.2);
   margin-bottom: 30px;
 }
-.bg-unset {
-  background-color: unset !important;
-}
+
 .form-g {
   border-left: none !important;
 }

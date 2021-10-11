@@ -136,7 +136,7 @@ function HomePage() {
                       type="text"
                       placeholder="City or port"
                       aria-label="cityFrom"
-                      className="form-g"
+                      className="form-g bg-fill"
                       value={value.cityFrom}
                       onChange={(e) =>
                         setValue((prev) => {
@@ -160,7 +160,7 @@ function HomePage() {
                       type="text"
                       placeholder="City or port"
                       aria-label="cityTo"
-                      className="form-g"
+                      className="form-g bg-fill"
                       value={value.cityTo}
                       onChange={(e) =>
                         setValue((prev) => {
@@ -184,10 +184,16 @@ function HomePage() {
                     </InputGroup.Text>
                     <FormControl
                       type="text"
+                      onFocus={(e) =>
+                        e.target.type === "text" ? (e.target.type = "date") : ""
+                      }
+                      onBlur={(e) =>
+                        e.target.type === "date" ? (e.target.type = "text") : ""
+                      }
                       placeholder="Ready Date"
                       aria-label="readyDate"
                       value={value.readyDate}
-                      className="form-g"
+                      className="form-g bg-fill"
                       onChange={(e) =>
                         setValue((prev) => {
                           return { ...prev, readyDate: e.target.value };
@@ -199,15 +205,15 @@ function HomePage() {
                 <Col>
                   <Form.Select
                     aria-label="incoterms"
+                    value="incoterms"
+                    className="bg-fill"
                     onChange={(e) =>
                       setValue((prev) => {
                         return { ...prev, incoterms: e.target.value };
                       })
                     }
                   >
-                    <option value="" disabled>
-                      Incoterms
-                    </option>
+                    <option value="">Incoterms</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -220,6 +226,7 @@ function HomePage() {
                       label="cargoValue"
                       id="cargoValue"
                       type="text"
+                      className="bg-fill"
                       value={value.cargoValue}
                       placeholder="Total Cargo Value"
                       onChange={(e) =>
@@ -291,7 +298,7 @@ function HomePage() {
                           })
                         }
                       />
-                      <label for="totalVolume">Total Volume</label>
+                      <label htmlFor="totalVolume">Total Volume</label>
                     </div>
                     <span
                       className="input-group-text"
@@ -324,7 +331,7 @@ function HomePage() {
                           })
                         }
                       />
-                      <label for="totalWeight">Total Volume</label>
+                      <label htmlFor="totalWeight">Total Volume</label>
                     </div>
                     <span
                       className="input-group-text"
